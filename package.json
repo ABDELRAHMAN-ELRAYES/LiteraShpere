@@ -3,23 +3,29 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsx watch --env-file=.env src/server.ts"
+    "start": "tsx watch --env-file=.env src/server.ts",
+    "sass": "sass --watch --quiet src/styles/main.scss:src/public/css/main.css",
+    "start:dev": "concurrently \"npm run start\" \"npm run sass\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.5",
+    "concurrently": "^9.0.1",
     "prisma": "^5.20.0",
+    "sass": "^1.79.5",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.1"
   },
   "dependencies": {
     "@prisma/client": "^5.20.0",
     "@types/morgan": "^1.9.9",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0",
