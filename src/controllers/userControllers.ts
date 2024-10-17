@@ -35,17 +35,17 @@ export const createUser = catchAsync(
       username: req.body.username,
       email: req.body.email,
       password,
-      resetPasswordToken: req.body.resetPasswordToken,
-      profilePicture: req.body.profilePicture,
-      profileCover: req.body.profileCover,
-      bio: req.body.bio,
+      // resetPasswordToken: req.body.resetPasswordToken,
+      // profilePicture: req.body.profilePicture,
+      // profileCover: req.body.profileCover,
+      // bio: req.body.bio,
       phoneNumber: req.body.phoneNumber,
       birthDate: new Date(req.body.birthDate),
     };
     const user = await prisma.user.create({
       data,
     });
-    res.status(200).json({
+    res.status(201).json({
       user,
     });
   }
@@ -71,7 +71,7 @@ export const deleteUser = catchAsync(
         id: req.params.id,
       },
     });
-    res.status(200).json({
+    res.status(204).json({
       user,
     });
   }
