@@ -1,0 +1,64 @@
+doctype html
+html(lang="en") 
+    head 
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="icon", href="/img/logo/squareWhiteL.png")
+        link(rel="stylesheet", href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css")
+        title LitLink | #{title}
+        script(src="/js/signForms.js" defer)
+    body
+        .container 
+            .left-container 
+                .left-img
+                    img(src="/img/bg/bg1.jpg", alt="")
+                    img.l-logo(src="/img/logo/whiteL.png", alt="")
+                .left-content 
+            .right-container
+                .left-content
+                    img.logo(src="/img/logo/logo.png", alt="")
+                    .forms 
+                        .signin-form
+                            .oauth-forms
+                                a.oauth-btn.google-signin-btn(type="submit") 
+                                    i.fa-brands.fa-google
+                                a.oauth-btn.x-signin-btn(type="submit") 
+                                    i.fa-brands.fa-x-twitter
+                                a.oauth-btn.facebook-signin-btn(type="submit") 
+                                    i.fa-brands.fa-facebook-f
+                                .apple-content
+                                    a.oauth-btn.apple-signin-btn(type="submit") 
+                                        i.fa-brands.fa-apple
+                                        p Sign in <br> with Apple
+                            h1 Sign in 
+                            input.email-input(type="text" placeholder= "Email Address or Username")
+                            input.password-input(type="text" placeholder="Password")
+                            if message 
+                                p.message #{message}
+                            button.signin-btn(type="submit") Sign in
+                            p Don't have an account?
+                                a.get-signup-form-btn Sign up 
+                        .signup-form.move-right 
+                            .oauth-forms
+                                a.oauth-btn.google-signin-btn(type="submit") 
+                                    i.fa-brands.fa-google
+                                a.oauth-btn.x-signin-btn(type="submit") 
+                                    i.fa-brands.fa-x-twitter
+                                a.oauth-btn.facebook-signin-btn(type="submit") 
+                                    i.fa-brands.fa-facebook-f
+                                .apple-content
+                                    a.oauth-btn.apple-signin-btn(type="submit") 
+                                        i.fa-brands.fa-apple
+                                        p Sign up <br> with Apple
+                            h1 Sign up
+                            input.name-input(type="text" placeholder= "Full Name")
+                            input.email-input(type="text" placeholder= "Email Address")
+                            input.password-input(type="text" placeholder="Password")
+                            input.confirm-password-input(type="text" placeholder="Confirm Password")
+                            input.birthdate-input(type="date" placeholder="Birth Date")
+                            if message 
+                                p.message #{message}
+                            button.signin-btn(type="submit") Sign up
+                            p Have an account already?
+                                a.get-signin-form-btn(href="") Sign in 

@@ -7,6 +7,7 @@ import {
 } from './middleware/middlewares';
 import path from 'path';
 import userRouter from './routes/userRoutes';
+import viewRouter from './routes/viewRoutes';
 import { catchErrorMiddleware } from './middleware/catchError';
 
 // create express app
@@ -25,12 +26,10 @@ app.set('views', path.join(__dirname, 'views'));
 // define public  static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
-  res.status(200).render('index');
-});
-
+// mounting routers
+app.use('/', viewRouter);
 app.use('/users', userRouter);
 
-// Global Error Handling 
+// Global Error Handling
 app.use(catchErrorMiddleware);
 export default app;
